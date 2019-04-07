@@ -47,19 +47,112 @@ public class String_printer
       if(borders == true){System.out.print("|");}
    
    }
+   
+   public void print_left_justified(boolean borders, int total_size, String... messages)
+   {
+         
+      for(String message : messages)
+      {
+      
+         if(borders == true){System.out.print("|");}
+      
+         System.out.format("%-" + total_size + "s", message);   //centered, but section size may vary amongst each other
+      
+      }
+      
+      if(borders == true){System.out.print("|");}
+   
+   }
+   
+   public void print_left_justified(int total_size, String... messages)
+   {
+         
+      for(String message : messages)
+      {
+      
+         System.out.print("|");
+      
+         System.out.format("%-" + total_size + "s", message);   //centered, but section size may vary amongst each other
+      
+      }
+      
+      System.out.print("|");
+   
+   }
 
+   public void print_right_justified(boolean borders, int total_size, String... messages)
+   {
+         
+      for(String message : messages)
+      {
+      
+         if(borders == true){System.out.print("|");}
+      
+         System.out.format("%" + total_size + "s", message);   //centered, but section size may vary amongst each other
+      
+      }
+      
+      if(borders == true){System.out.print("|");}
+   
+   }
+   
+   public void print_right_justified(int total_size, String... messages)
+   {
+         
+      for(String message : messages)
+      {
+      
+         System.out.print("|");
+      
+         System.out.format("%" + total_size + "s", message);   //centered, but section size may vary amongst each other
+      
+      }
+      
+      System.out.print("|");
+   
+   }
    
    public void print_c(int total, String... messages)  {  print_center_justified(total, messages);  }
    
    public void print_c(boolean borders, int total, String... messages)  {  print_center_justified(borders, total, messages);  }
+   
+   public void println_c(int total, String... messages)  {  print_center_justified(total, messages);  System.out.println();}
+   
+   public void println_c(boolean borders, int total, String... messages)  {  print_center_justified(borders, total, messages);  System.out.println();}
+   
+   public void print_l(int total, String... messages)  {  print_left_justified(total, messages);  }
+   
+   public void print_l(boolean borders, int total, String... messages)  {  print_left_justified(borders, total, messages);  }
+   
+   public void println_l(int total, String... messages)  {  print_left_justified(total, messages);  System.out.println();}
+   
+   public void println_l(boolean borders, int total, String... messages)  {  print_left_justified(borders, total, messages);  System.out.println();}
+   
+   public void print_r(int total, String... messages)  {  print_right_justified(total, messages);  }
+   
+   public void print_r(boolean borders, int total, String... messages)  {  print_right_justified(borders, total, messages);  }
+   
+   public void println_r(int total, String... messages)  {  print_right_justified(total, messages);  System.out.println();}
+   
+   public void println_r(boolean borders, int total, String... messages)  {  print_right_justified(borders, total, messages);  System.out.println();}
 
    public static void main(String[] args)
    {
    
       String_printer sp = new String_printer();
-      //sp.print_c(true, );
+      sp.println_c(true, 20, "ace", "ventura", "show");
+      sp.println_c(false, 20, "ace", "ventura", "show");
+      sp.print_c(true, 20, "ace", "ventura", "show");    System.out.println();
+      sp.print_c(false, 20, "ace", "ventura", "show");   System.out.println();
+      sp.println_l(true, 20, "ace", "ventura", "show");
+      sp.println_l(false, 20, "ace", "ventura", "show");
+      sp.print_l(true, 20, "ace", "ventura", "show");    System.out.println();
+      sp.print_l(false, 20, "ace", "ventura", "show");   System.out.println();
+      sp.println_r(true, 20, "ace", "ventura", "show");
+      sp.println_r(false, 20, "ace", "ventura", "show");
+      sp.print_r(true, 20, "ace", "ventura", "show");    System.out.println();
+      sp.print_r(false, 20, "ace", "ventura", "show");   System.out.println();
       
-      //TODO - test out the new borderless function overload for print_c() --- has NOT been mvn install'd 
    
    }
 
