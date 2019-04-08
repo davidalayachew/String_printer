@@ -1,5 +1,5 @@
-!1513;s
-A
+!1655;s
+J
 SAU0JGRASP_MAIN_BOUNDS=%<CONTROL_SHELL_BOUNDS>\012PATH+=%<JGRASP_PATHS>%;\012PATH=+%;%<JGRASP_C_PATHS>\012CYGWIN=nodosfilewarning\012GCC_COLORS=\012-Run\012ADD_EXE_PATH==Y\012
 SCU0JGRASP_MAIN_BOUNDS=%<CONTROL_SHELL_BOUNDS>\012PATH+=%<JGRASP_PATHS>%;\012PATH=+%;%<JGRASP_C_PATHS>\012CYGWIN=nodosfilewarning\012GCC_COLORS=\012-Run\012ADD_EXE_PATH==Y\012
 S+U0JGRASP_MAIN_BOUNDS=%<CONTROL_SHELL_BOUNDS>\012PATH+=%<JGRASP_PATHS>%;\012PATH=+%;%<JGRASP_C_PATHS>\012CYGWIN=nodosfilewarning\012GCC_COLORS=\012-Run\012ADD_EXE_PATH==Y\012
@@ -9,11 +9,15 @@ SOU0JGRASP_MAIN_BOUNDS=%<CONTROL_SHELL_BOUNDS>\012PATH+=%<JGRASP_PATHS>%;\012PAT
 SyU0JGRASP_MAIN_BOUNDS=%<CONTROL_SHELL_BOUNDS>\012PATH+=%<PYTHON_PATH>%;\012PATH+=%<JGRASP_PATHS>%;\012CYGWIN=nodosfilewarning\012GCC_COLORS=
 SPU0
 s#i0
-s#k0
-s#j0
+s#k0C:\\Users\\David\\.m2\\repository\\junit\\junit\\4.12\\junit-4.12.jar\000
+s#j0C:\\Users\\David\\.m2\\repository\\junit\\junit\\4.12\\junit-4.12.jar
 s#l0
 !339;d
-[\012  grasp [\012   legendy 0.0\012   legendx 0.0\012   version 1\012   winflags 3\012   eheight 972\012   ewidth 960\012   height 972\012   width 960\012   wbp 0\012   initlayout 0\012   yoffs 2.0\012   xoffs -2.0\012   scale 1.0\012   args ""\012   otherflags 139\012   shallowjar 1\012   visflags 118423807\012  ]\012  directed 1\012 ]!60;g
+[\012  grasp [\012   legendy 0.0\012   legendx 0.0\012   version 1\012   winflags 3\012   eheight 972\012   ewidth 960\012   height 972\012   width 960\012   wbp 0\012   initlayout 0\012   yoffs 2.0\012   xoffs -2.0\012   scale 1.0\012   args ""\012   otherflags 139\012   shallowjar 1\012   visflags 118423807\012  ]\012  directed 1\012 ]!79;g
+%\011%u%u%upom.xml
 %\011io%sgithub%sdalayach%sPrint_tools%sString_printer.java
-!60;f
+!79;f
+%\011%u%u%upom.xml
 %\011io%sgithub%sdalayach%sPrint_tools%sString_printer.java
+!85;l
+%\011%u%utest%sjava%sio%sgithub%sdalayach%sPrint_tools%sTest_for_String_printer.java
