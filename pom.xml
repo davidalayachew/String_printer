@@ -5,7 +5,7 @@
 
    <groupId>io.github.dalayach.Print_tools</groupId>
    <artifactId>String_printer</artifactId>
-   <version>1.0</version>
+   <version>1.1-SNAPSHOT</version>
 
    <name>String_printer</name>
    <!-- FIXME change it to the project's website -->
@@ -13,7 +13,7 @@
 
    <scm>
 	<developerConnection>scm:git:https://github.com/dalayach/String_printer</developerConnection>
-     <tag>String_printer-1.0</tag>
+     <tag>HEAD</tag>
   </scm>
    
    <properties>
