@@ -8,6 +8,36 @@ public class String_printer
    public String_printer()
    {}
    
+   public int get_buffer_size(int total_size, int message_length)
+   {
+   
+      return ((total_size - message_length)/2) + ((total_size - message_length)%2); 
+      //since dividing by 2 might give us a remainder of one (it will when dividing an odd number), 
+      //we have elected to add the extra space to the right_buffer
+   
+   }
+   
+   public String print_borders(boolean borders)
+   {
+   
+      if(borders == true)
+      {
+      
+         System.out.print("|");
+         return "|";
+      
+      }
+      
+      else
+      {
+      
+         return "";
+      
+      }
+      
+   
+   }
+   
    public String print_center_justified(int total_size, String... messages)
    {
    
@@ -18,8 +48,8 @@ public class String_printer
       for(String message : messages)
       {
       
-         right_buffer  = ((total_size - message.length())/2) + ((total_size - message.length())%2); //since dividing by 2 might give us a remainder of one (it will when dividing an odd number), we have elected to add the extra space to the right_buffer
-         left_buffer   = total_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
+         right_buffer   = get_buffer_size(total_size, message.length());
+         left_buffer    = total_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
       
          System.out.format("|%" + left_buffer + "s%" + right_buffer + "s", message, " ");   //centered, but section size may vary amongst each other
          result = result + String.format("|%" + left_buffer + "s%" + right_buffer + "s", message, " ");
@@ -43,17 +73,17 @@ public class String_printer
       for(String message : messages)
       {
       
-         right_buffer  = ((total_size - message.length())/2) + ((total_size - message.length())%2); //since dividing by 2 might give us a remainder of one (it will when dividing an odd number), we have elected to add the extra space to the right_buffer
+         right_buffer   = get_buffer_size(total_size, message.length());
          left_buffer   = total_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
       
-         if(borders == true){System.out.print("|"); result = result + "|";}
+         result = result + print_borders(borders);
       
          System.out.format("%" + left_buffer + "s%" + right_buffer + "s", message, " ");   //centered, but section size may vary amongst each other
          result = result + String.format("%" + left_buffer + "s%" + right_buffer + "s", message, " ");
       
       }
       
-      if(borders == true){System.out.print("|");   result = result + "|";}
+      result = result + print_borders(borders);
       
       return result;
    
@@ -67,14 +97,14 @@ public class String_printer
       for(String message : messages)
       {
       
-         if(borders == true){System.out.print("|"); result = result + "|";}
+         result = result + print_borders(borders);
       
          System.out.format("%-" + total_size + "s", message);   //centered, but section size may vary amongst each other
          result = result + String.format("%-" + total_size + "s", message);
       
       }
       
-      if(borders == true){System.out.print("|");   result = result + "|";}
+      result = result + print_borders(borders);
       
       return result;
          
@@ -111,14 +141,14 @@ public class String_printer
       for(String message : messages)
       {
       
-         if(borders == true){System.out.print("|");  result = result + "|";}
+         result = result + print_borders(borders);
       
          System.out.format("%" + total_size + "s", message);   //centered, but section size may vary amongst each other
          result = result + String.format("%" + total_size + "s", message);
       
       }
       
-      if(borders == true){System.out.print("|");   result = result + "|";}
+      result = result + print_borders(borders);
       
       return result;
    
@@ -154,10 +184,12 @@ public class String_printer
       return print_center_justified(borders, total, messages);  }
    
    public String println_c(int total, String... messages)  {  
-      String result = print_center_justified(total, messages);  System.out.println();  return result + "\n";}
+      String result = print_center_justified(total, messages);  System.out.println();  
+      return result + "\n";}
    
    public String println_c(boolean borders, int total, String... messages)  {  
-      String result =  print_center_justified(borders, total, messages);  System.out.println();  return result + "\n";}
+      String result =  print_center_justified(borders, total, messages);  System.out.println();  
+      return result + "\n";}
    
    public String print_l(int total, String... messages)  {  
       return print_left_justified(total, messages);  }
@@ -166,10 +198,12 @@ public class String_printer
       return print_left_justified(borders, total, messages);  }
    
    public String println_l(int total, String... messages)  {  
-      String result =  print_left_justified(total, messages);  System.out.println();  return result + "\n";}
+      String result =  print_left_justified(total, messages);  System.out.println();  
+      return result + "\n";}
    
    public String println_l(boolean borders, int total, String... messages)  {  
-      String result =  print_left_justified(borders, total, messages);  System.out.println();  return result + "\n";}
+      String result =  print_left_justified(borders, total, messages);  System.out.println();  
+      return result + "\n";}
    
    public String print_r(int total, String... messages)  {  
       return print_right_justified(total, messages);  }
@@ -178,10 +212,12 @@ public class String_printer
       return print_right_justified(borders, total, messages);  }
    
    public String println_r(int total, String... messages)  {  
-      String result =  print_right_justified(total, messages);  System.out.println();  return result + "\n";}
+      String result =  print_right_justified(total, messages);  System.out.println();  
+      return result + "\n";}
    
    public String println_r(boolean borders, int total, String... messages)  {  
-      String result =  print_right_justified(borders, total, messages);  System.out.println();  return result + "\n";}
+      String result =  print_right_justified(borders, total, messages);  System.out.println();  
+      return result + "\n";}
 
    public static void main(String[] args)
    {
