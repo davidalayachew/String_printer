@@ -1,6 +1,7 @@
 package io.github.dalayach.Print_tools;
 
-//TODO -- right now, result is working alongside the print/format statements. INSTEAD, have result be the only value calculated, then both return and print result
+//TODO -- right now, result is working alongside the print/format statements. INSTEAD, have result be the only value calculated, then both return and print result (maybe give the option to print result?)
+//TODO -- give option to choose border character(s) (ideally, allow there to be a left and right variant, as well as a flip variant)
 
 public class String_printer
 {
