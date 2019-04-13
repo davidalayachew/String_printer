@@ -12,9 +12,9 @@
    <url>http://www.example.com</url>
 
    <scm>
-	<developerConnection>scm:git:https://github.com/dalayach/String_printer</developerConnection>
-     <tag>String_printer-1.2</tag>
-  </scm>
+      <developerConnection>scm:git:https://github.com/dalayach/String_printer</developerConnection>
+      <tag>String_printer-1.2</tag>
+   </scm>
    
    <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -112,28 +112,28 @@
                <artifactId>maven-project-info-reports-plugin</artifactId>
                <version>3.0.0</version>
              </plugin>
-			 
+          
           </plugins>
        </pluginManagement>
     </build>
 	
-  <repositories>
-    <repository>
-      <id>maven-group</id>
-      <url>http://localhost:8081/repository/maven-public/</url>
-    </repository>
-  </repositories>
+   <repositories>
+      <repository>
+         <id>maven-group</id>
+         <url>http://localhost:8081/repository/maven-public/</url>
+      </repository>
+   </repositories>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <url>http://localhost:8081/repository/maven-snapshots/</url>
-    </snapshotRepository>
-    <repository>
-      <id>nexus-releases</id>
-      <url>http://localhost:8081/repository/maven-releases/</url>
-    </repository>
-  </distributionManagement>
+   <distributionManagement>
+      <snapshotRepository>
+         <id>nexus-snapshots</id>
+         <url>http://localhost:8081/repository/maven-snapshots/</url>
+      </snapshotRepository>
+      <repository>
+         <id>nexus-releases</id>
+         <url>http://localhost:8081/repository/maven-releases/</url>
+      </repository>
+   </distributionManagement>
 
 	
 </project>
