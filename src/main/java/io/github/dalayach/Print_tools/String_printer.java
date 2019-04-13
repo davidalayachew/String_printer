@@ -8,6 +8,11 @@ public class String_printer
    public String_printer()
    {}
    
+   public void print_format()
+   {
+   
+   }
+   
    public int get_buffer_size(int total_size, int message_length)
    {
    
