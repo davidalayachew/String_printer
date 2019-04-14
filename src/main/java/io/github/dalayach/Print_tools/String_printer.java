@@ -4,6 +4,7 @@ package io.github.dalayach.Print_tools;
 //TODO   CHECK LENGTH = it's not exactly clean if somewhere down the line, a String has to go out of bounds to fit
 //TODO   This class is too cluttered - maybe group some of the methods in other classes? How to group?
 //          Maybe helpers in one class? Main printer functions in another? Aliases in a third? Perhaps divide by justification?
+//TODO   Optimization on some of the for each loops
 
 public class String_printer
 {
@@ -11,20 +12,46 @@ public class String_printer
    public String_printer()
    {}
    
-   public void check_if_at_least_one_of_the_strings_is_too_big()
-   {}
+   public int check_if_at_least_one_of_the_strings_is_too_big(int total_size, String... messages)
+   {
+   
+      int index = messages.length;
+      int max_length = total_size;
+   
+   
+   //This for loop has room for optimization - specifically...
+   //    - is there some algorithm that would find the highest point fastest? A for loop may not be the most efficient.
+   //    - is it more efficient to have 2 calls to message.length()? Or a single call and save that value to yet another variable? Another way?
+      for(int i = 0; i < messages.length; i++)
+      {
+      
+         if(messages[i].length() > max_length)
+         {
+         
+            index = i;
+            max_length = messages[i].length();
+         
+         }
+      
+         i++;
+      
+      }
+      
+      return index;
+   
+   }
    
    public void do_this_if_at_least_one_of_the_strings_is_too_big()
    {}
    
-   public String format_specifiers(int left_buffer, int right_buffer)
+   public String specifiers_for_format(int left_buffer, int right_buffer)
    {
    
       return "%" + left_buffer + "s%" + right_buffer + "s";   //centered, but section size may vary amongst each other
    
    }
    
-   public String format_specifiers(int buffer, boolean left)
+   public String specifiers_for_format(int buffer, boolean left)
    {
    
       String which_side;   //which side will the string be justified?
@@ -45,16 +72,16 @@ public class String_printer
    
       if(left_buffer == 0)
       {
-         return String.format(format_specifiers(total_size, true), message);}
+         return String.format(specifiers_for_format(total_size, true), message);}
       
       else if(right_buffer == 0)
       {
-         return String.format(format_specifiers(total_size, false), message);}
+         return String.format(specifiers_for_format(total_size, false), message);}
       
       else
       {
       
-         return String.format(format_specifiers(left_buffer, right_buffer), message, " ");   //centered, but section size may vary amongst each other
+         return String.format(specifiers_for_format(left_buffer, right_buffer), message, " ");   //centered, but section size may vary amongst each other
       
       }
    
@@ -69,7 +96,7 @@ public class String_printer
    
    }
    
-   public String print_borders(boolean borders)
+   public String give_borders(boolean borders)
    {
    
       if(borders == true)
@@ -127,11 +154,11 @@ public class String_printer
          right_buffer   = get_buffer_size(total_size, message.length());
          left_buffer   = total_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
       
-         result = result + print_borders(borders) + create_formatted_string(left_buffer, right_buffer, message);
+         result = result + give_borders(borders) + create_formatted_string(left_buffer, right_buffer, message);
       
       }
       
-      result = result + print_borders(borders);
+      result = result + give_borders(borders);
       
       System.out.print(result);
       
@@ -147,11 +174,11 @@ public class String_printer
       for(String message : messages)
       {
       
-         result = result + print_borders(borders) + create_formatted_string(0, total_size, message);
+         result = result + give_borders(borders) + create_formatted_string(0, total_size, message);
       
       }
       
-      result = result + print_borders(borders);
+      result = result + give_borders(borders);
       
       System.out.print(result);
       
@@ -187,11 +214,11 @@ public class String_printer
       for(String message : messages)
       {
                
-         result = result + print_borders(borders) + create_formatted_string(total_size, 0, message);
+         result = result + give_borders(borders) + create_formatted_string(total_size, 0, message);
       
       }
       
-      result = result + print_borders(borders);
+      result = result + give_borders(borders);
       
       System.out.print(result);
       
