@@ -1,2 +1,3 @@
 /target/checkout
 /target/maven-status
+/target/surefire-reports
