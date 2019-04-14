@@ -42,6 +42,6 @@ sp.print_r(false, 20, "ace", "ventura", "show");   =                  ace       
 
 #### --Built to assist output of WOT_PlayerComp_V1
 
-###### *Honestly, I'm building this software for simplicity and to learn how to deploy on maven... :P*
+###### *Honestly, I'm building this software for simplicity's sake and to learn how to deploy on maven... :P*
 
 
