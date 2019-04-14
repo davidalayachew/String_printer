@@ -12,11 +12,11 @@ public class String_printer
    public String_printer()
    {}
    
-   public int check_if_at_least_one_of_the_strings_is_too_big(int total_size, String... messages)
+   public int check_expected_size_is_accurate(int expected_size, String... messages)
    {
    
       int index = messages.length;
-      int max_length = total_size;
+      int max_length = expected_size;
    
    
    //This for loop has room for optimization - specifically...
@@ -41,8 +41,26 @@ public class String_printer
    
    }
    
-   public void do_this_if_at_least_one_of_the_strings_is_too_big()
-   {}
+   public int get_actual_size(int expected_size, String... messages)
+   {
+   
+      int index_of_offending_string = check_expected_size_is_accurate(expected_size, messages);
+      
+      if(index_of_offending_string == messages.length)   //if the expected size was accurate
+      {
+      
+         return expected_size;
+      
+      }
+      
+      else
+      {
+      
+         return messages[index_of_offending_string].length();
+      
+      }
+   
+   }
    
    public String specifiers_for_format(int left_buffer, int right_buffer)
    {
@@ -68,15 +86,15 @@ public class String_printer
    public String create_formatted_String(int left_buffer, int right_buffer, String message)
    {
    
-      int total_size = left_buffer + right_buffer;
+      int expected_size = left_buffer + right_buffer;
    
       if(left_buffer == 0)
       {
-         return String.format(specifiers_for_format(total_size, true), message);}
+         return String.format(specifiers_for_format(expected_size, true), message);}
       
       else if(right_buffer == 0)
       {
-         return String.format(specifiers_for_format(total_size, false), message);}
+         return String.format(specifiers_for_format(expected_size, false), message);}
       
       else
       {
@@ -87,10 +105,10 @@ public class String_printer
    
    }
    
-   public int get_buffer_size(int total_size, int message_length)
+   public int get_buffer_size(int expected_size, int message_length)
    {
    
-      return ((total_size - message_length)/2) + ((total_size - message_length)%2); 
+      return ((expected_size - message_length)/2) + ((expected_size - message_length)%2); 
       //since dividing by 2 might give us a remainder of one (it will when dividing an odd number), 
       //we have elected to add the extra space to the right_buffer
    
@@ -116,18 +134,19 @@ public class String_printer
    
    }
    
-   public String print_center_justified(int total_size, String... messages)
+   public String print_center_justified(int expected_size, String... messages)
    {
    
       String result = "";
       int left_buffer;
       int right_buffer;
+      int actual_size = get_actual_size(expected_size, messages);
    
       for(String message : messages)
       {
       
-         right_buffer   = get_buffer_size(total_size, message.length());
-         left_buffer    = total_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
+         right_buffer   = get_buffer_size(actual_size, message.length());
+         left_buffer    = expected_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
       
          result = result + "|" + create_formatted_string(left_buffer, right_buffer, message);
       
@@ -141,18 +160,20 @@ public class String_printer
    
    }
    
-   public String print_center_justified(boolean borders, int total_size, String... messages)
+   public String print_center_justified(boolean borders, int expected_size, String... messages)
    {
    
       String result = "";
       int right_buffer;
       int left_buffer;
+      int actual_size = get_actual_size(expected_size, messages);
+   
    
       for(String message : messages)
       {
       
-         right_buffer   = get_buffer_size(total_size, message.length());
-         left_buffer   = total_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
+         right_buffer   = get_buffer_size(actual_size, message.length());
+         left_buffer   = expected_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
       
          result = result + give_borders(borders) + create_formatted_string(left_buffer, right_buffer, message);
       
@@ -166,15 +187,17 @@ public class String_printer
    
    }
    
-   public String print_left_justified(boolean borders, int total_size, String... messages)
+   public String print_left_justified(boolean borders, int expected_size, String... messages)
    {
          
       String result = "";
+      int actual_size = get_actual_size(expected_size, messages);
+   
          
       for(String message : messages)
       {
       
-         result = result + give_borders(borders) + create_formatted_string(0, total_size, message);
+         result = result + give_borders(borders) + create_formatted_string(0, actual_size, message);
       
       }
       
@@ -186,15 +209,17 @@ public class String_printer
          
    }
    
-   public String print_left_justified(int total_size, String... messages)
+   public String print_left_justified(int expected_size, String... messages)
    {
    
       String result = "";
+      int actual_size = get_actual_size(expected_size, messages);
+   
          
       for(String message : messages)
       {
       
-         result = result + "|" + create_formatted_string(0, total_size, message);
+         result = result + "|" + create_formatted_string(0, actual_size, message);
       
       }
       
@@ -206,15 +231,17 @@ public class String_printer
    
    }
 
-   public String print_right_justified(boolean borders, int total_size, String... messages)
+   public String print_right_justified(boolean borders, int expected_size, String... messages)
    {
          
       String result = "";
+      int actual_size = get_actual_size(expected_size, messages);
+   
          
       for(String message : messages)
       {
                
-         result = result + give_borders(borders) + create_formatted_string(total_size, 0, message);
+         result = result + give_borders(borders) + create_formatted_string(actual_size, 0, message);
       
       }
       
@@ -226,15 +253,17 @@ public class String_printer
    
    }
    
-   public String print_right_justified(int total_size, String... messages)
+   public String print_right_justified(int expected_size, String... messages)
    {
          
       String result = "";
+      int actual_size = get_actual_size(expected_size, messages);
+   
          
       for(String message : messages)
       {
       
-         result = result + "|" + create_formatted_string(total_size, 0, message);
+         result = result + "|" + create_formatted_string(actual_size, 0, message);
       
       }
       
