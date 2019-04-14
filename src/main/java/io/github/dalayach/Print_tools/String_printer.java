@@ -260,20 +260,19 @@ public class String_printer
    public static void main(String[] args)
    {
    
-      String_printer sp = new String_printer();
-      sp.println_c(true, 20, "ace", "ventura", "show");
-      sp.println_c(false, 20, "ace", "ventura", "show");
-      sp.print_c(true, 20, "ace", "ventura", "show");    System.out.println();
-      sp.print_c(false, 20, "ace", "ventura", "show");   System.out.println();
-      sp.println_l(true, 20, "ace", "ventura", "show");
-      sp.println_l(false, 20, "ace", "ventura", "show");
-      sp.print_l(true, 20, "ace", "ventura", "show");    System.out.println();
-      sp.print_l(false, 20, "ace", "ventura", "show");   System.out.println();
-      sp.println_r(true, 20, "ace", "ventura", "show");
-      sp.println_r(false, 20, "ace", "ventura", "show");
-      sp.print_r(true, 20, "ace", "ventura", "show");    System.out.println();
-      sp.print_r(false, 20, "ace", "ventura", "show");   System.out.println();
-      
+      String_printer sp = new String_printer();          System.out.print("  sp.println_c(true, 20, \"ace\", \"ventura\", \"show\");   = ");
+      sp.println_c(true, 20, "ace", "ventura", "show");  System.out.print("  sp.println_c(false, 20, \"ace\", \"ventura\", \"show\");  = ");
+      sp.println_c(false, 20, "ace", "ventura", "show"); System.out.print("  sp.print_c(true, 20, \"ace\", \"ventura\", \"show\");     = ");
+      sp.print_c(true, 20, "ace", "ventura", "show");  System.out.print("\n  sp.print_c(false, 20, \"ace\", \"ventura\", \"show\");    = ");
+      sp.print_c(false, 20, "ace", "ventura", "show"); System.out.print("\n  sp.println_l(true, 20, \"ace\", \"ventura\", \"show\");   = ");
+      sp.println_l(true, 20, "ace", "ventura", "show");  System.out.print("  sp.println_l(false, 20, \"ace\", \"ventura\", \"show\");  = ");
+      sp.println_l(false, 20, "ace", "ventura", "show"); System.out.print("  sp.print_l(true, 20, \"ace\", \"ventura\", \"show\");     = ");
+      sp.print_l(true, 20, "ace", "ventura", "show");  System.out.print("\n  sp.print_l(false, 20, \"ace\", \"ventura\", \"show\");    = ");
+      sp.print_l(false, 20, "ace", "ventura", "show"); System.out.print("\n  sp.println_r(true, 20, \"ace\", \"ventura\", \"show\");   = ");
+      sp.println_r(true, 20, "ace", "ventura", "show");  System.out.print("  sp.println_r(false, 20, \"ace\", \"ventura\", \"show\");  = ");
+      sp.println_r(false, 20, "ace", "ventura", "show"); System.out.print("  sp.print_r(true, 20, \"ace\", \"ventura\", \"show\");     = ");
+      sp.print_r(true, 20, "ace", "ventura", "show");  System.out.print("\n  sp.print_r(false, 20, \"ace\", \"ventura\", \"show\");    = ");
+      sp.print_r(false, 20, "ace", "ventura", "show");
    
    }
 
