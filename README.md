@@ -4,7 +4,7 @@
 
 #### Allows you to organize output into a left/right/center justiifed output, separated with borders (soon to be with your choice of border character), and prints out in a clean and neat format.
 
-#### Use case below. You can also run the String_printer to get a quick rundown of the use case!
+#### Use case below. You can also run the String_printer to see the same thing!
 
 ```
 
