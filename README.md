@@ -7,13 +7,14 @@
 #### Use case below. You can also run the String_printer to see the same thing!
 
 ```
-
-you can also replace any of the "print_" commands with "println_" to allow for easy looping 
-
-the parameters in order are
-	boolean 	- do you want borders?
-	int		- how big is each column? (not including borders)
-	String...	- Strings to be used (Arrays are acceptable too)
+/**
+ *  you can also replace any of the "print_" commands with "println_" to allow for easy looping 
+ *
+ *  the parameters in order are
+ *	boolean 	- do you want borders?
+ *	int		- how big is each column? (not including borders)
+ *	String...	- Strings to be used (Arrays are acceptable too)
+ */
 
 String_printer sp = new String_printer();
 
