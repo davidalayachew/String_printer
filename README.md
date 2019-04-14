@@ -12,6 +12,10 @@ String_printer sp = new String_printer();
 
 //you can also replace any of the "print_" commands with "println_" to allow for easy looping 
 
+//the parameters in order are
+//	boolean 	- do you want borders?
+//	int		- how big is each column? (not including borders)
+//	String...	- Strings to be used (Arrays are acceptable too)
 sp.print_c(true, 20, "ace", "ventura", "show");     = |        ace         |      ventura       |        show        |
 sp.print_c(false, 20, "ace", "ventura", "show");    =         ace               ventura               show
 
@@ -22,6 +26,15 @@ sp.print_l(false, 20, "ace", "ventura", "show");    = ace                 ventur
 
 sp.print_r(true, 20, "ace", "ventura", "show");     = |                 ace|             ventura|                show|
 sp.print_r(false, 20, "ace", "ventura", "show");    =                  ace             ventura                show
+
+
+//Arrays work too!
+
+String arr[] = {"ace", "ventura", "show"};
+
+sp.print_r(false, 20, arr);                        =                  ace             ventura                show
+
+sp.print_r(false, 20, "ace", "ventura", "show");   =                  ace             ventura                show
 
 ```
 

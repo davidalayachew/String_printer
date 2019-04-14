@@ -324,7 +324,7 @@ public class String_printer
    public static void main(String[] args)
    {
    
-                                                         System.out.print("  String_printer sp = new String_printer();\n\n");
+      System.out.print("  String_printer sp = new String_printer();\n\n");
       String_printer sp = new String_printer();          System.out.print("  sp.println_c(true, 20, \"ace\", \"ventura\", \"show\");   = ");
       sp.println_c(true, 20, "ace", "ventura", "show");  System.out.print("  sp.println_c(false, 20, \"ace\", \"ventura\", \"show\");  = ");
       sp.println_c(false, 20, "ace", "ventura", "show"); System.out.print("  sp.print_c(true, 20, \"ace\", \"ventura\", \"show\");     = ");
@@ -337,7 +337,17 @@ public class String_printer
       sp.println_r(true, 20, "ace", "ventura", "show");  System.out.print("  sp.println_r(false, 20, \"ace\", \"ventura\", \"show\");  = ");
       sp.println_r(false, 20, "ace", "ventura", "show"); System.out.print("  sp.print_r(true, 20, \"ace\", \"ventura\", \"show\");     = ");
       sp.print_r(true, 20, "ace", "ventura", "show");  System.out.print("\n  sp.print_r(false, 20, \"ace\", \"ventura\", \"show\");    = ");
-      sp.print_r(false, 20, "ace", "ventura", "show"); System.out.println("\n");
+      sp.print_r(false, 20, "ace", "ventura", "show"); System.out.println("\n\n\n");
+      
+      System.out.println("//Arrays work too!\n\nString arr[] = {\"ace\", \"ventura\", \"show\"};");
+      System.out.print("\nsp.print_r(false, 20, arr);                        = ");
+      String[] arr = {"ace", "ventura", "show"};
+      sp.print_r(false, 20, arr);
+      
+      System.out.println("\n");
+      
+      System.out.print("sp.print_r(false, 20, \"ace\", \"ventura\", \"show\");   = ");
+      sp.print_r(false, 20, "ace", "ventura", "show");
    
    }
 
