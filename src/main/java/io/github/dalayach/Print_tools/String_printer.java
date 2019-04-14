@@ -9,8 +9,46 @@ public class String_printer
    public String_printer()
    {}
    
-   public void print_format()
+   public String format_specifiers(int left_buffer, int right_buffer)
    {
+   
+      return "%" + left_buffer + "s%" + right_buffer + "s";   //centered, but section size may vary amongst each other
+   
+   }
+   
+   public String format_specifiers(int buffer, boolean left)
+   {
+   
+      String which_side;   //which side will the string be justified?
+      
+      if(left == true){which_side = "-";} // "-" means the resulting string will be left justified
+      
+      else  {which_side = "";}   // "" means the resulting string will be right justified
+   
+      return "%" + which_side + buffer + "s";
+   
+   
+   }
+   
+   public String create_formatted_String(int left_buffer, int right_buffer, String message)
+   {
+   
+      int total_size = left_buffer + right_buffer;
+   
+      if(left_buffer == 0)
+      {
+         return String.format(format_specifiers(total_size, true), message);}
+      
+      else if(right_buffer == 0)
+      {
+         return String.format(format_specifiers(total_size, false), message);}
+      
+      else
+      {
+      
+         return String.format(format_specifiers(left_buffer, right_buffer), message, " ");   //centered, but section size may vary amongst each other
+      
+      }
    
    }
    
@@ -29,7 +67,6 @@ public class String_printer
       if(borders == true)
       {
       
-         System.out.print("|");
          return "|";
       
       }
@@ -48,8 +85,8 @@ public class String_printer
    {
    
       String result = "";
-      int right_buffer;
       int left_buffer;
+      int right_buffer;
    
       for(String message : messages)
       {
@@ -57,13 +94,13 @@ public class String_printer
          right_buffer   = get_buffer_size(total_size, message.length());
          left_buffer    = total_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
       
-         System.out.format("|%" + left_buffer + "s%" + right_buffer + "s", message, " ");   //centered, but section size may vary amongst each other
-         result = result + String.format("|%" + left_buffer + "s%" + right_buffer + "s", message, " ");
+         result = result + "|" + create_formatted_string(left_buffer, right_buffer, message);
       
       }
       
-      System.out.print("|");
       result = result + "|";
+      
+      System.out.print(result);
       
       return result;
    
@@ -82,14 +119,13 @@ public class String_printer
          right_buffer   = get_buffer_size(total_size, message.length());
          left_buffer   = total_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
       
-         result = result + print_borders(borders);
-      
-         System.out.format("%" + left_buffer + "s%" + right_buffer + "s", message, " ");   //centered, but section size may vary amongst each other
-         result = result + String.format("%" + left_buffer + "s%" + right_buffer + "s", message, " ");
+         result = result + print_borders(borders) + create_formatted_string(left_buffer, right_buffer, message);
       
       }
       
       result = result + print_borders(borders);
+      
+      System.out.print(result);
       
       return result;
    
@@ -103,14 +139,13 @@ public class String_printer
       for(String message : messages)
       {
       
-         result = result + print_borders(borders);
-      
-         System.out.format("%-" + total_size + "s", message);   //centered, but section size may vary amongst each other
-         result = result + String.format("%-" + total_size + "s", message);
+         result = result + print_borders(borders) + create_formatted_string(0, total_size, message);
       
       }
       
       result = result + print_borders(borders);
+      
+      System.out.print(result);
       
       return result;
          
@@ -124,16 +159,13 @@ public class String_printer
       for(String message : messages)
       {
       
-         System.out.print("|");
-         result = result + "|";
-      
-         System.out.format("%-" + total_size + "s", message);   //centered, but section size may vary amongst each other
-         result = result + String.format("%-" + total_size + "s", message);
+         result = result + "|" + create_formatted_string(0, total_size, message);
       
       }
       
-      System.out.print("|");
       result = result + "|";
+      
+      System.out.print(result);
       
       return result;
    
@@ -146,15 +178,14 @@ public class String_printer
          
       for(String message : messages)
       {
-      
-         result = result + print_borders(borders);
-      
-         System.out.format("%" + total_size + "s", message);   //centered, but section size may vary amongst each other
-         result = result + String.format("%" + total_size + "s", message);
+               
+         result = result + print_borders(borders) + create_formatted_string(total_size, 0, message);
       
       }
       
       result = result + print_borders(borders);
+      
+      System.out.print(result);
       
       return result;
    
@@ -168,16 +199,13 @@ public class String_printer
       for(String message : messages)
       {
       
-         System.out.print("|");
-         result = result + "|";
-      
-         System.out.format("%" + total_size + "s", message);   //centered, but section size may vary amongst each other
-         result = result + String.format("%" + total_size + "s", message);
+         result = result + "|" + create_formatted_string(total_size, 0, message);
       
       }
       
-      System.out.print("|");
       result = result + "|";
+      
+      System.out.print(result);
       
       return result;
    
@@ -224,6 +252,10 @@ public class String_printer
    public String println_r(boolean borders, int total, String... messages)  {  
       String result =  print_right_justified(borders, total, messages);  System.out.println();  
       return result + "\n";}
+      
+   public String create_formatted_string(int left_buffer, int right_buffer, String message)
+   {
+      return create_formatted_String(left_buffer, right_buffer, message);}
 
    public static void main(String[] args)
    {
