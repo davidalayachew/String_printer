@@ -10,16 +10,16 @@
 
 String_printer sp = new String_printer();
 
-sp.println_c(true, 20, "ace", "ventura", "show");   = |        ace         |      ventura       |        show        |
-sp.println_c(false, 20, "ace", "ventura", "show");  =         ace               ventura               show
+//you can also replace any of the "print_" commands with "println_" to allow for easy looping 
+
 sp.print_c(true, 20, "ace", "ventura", "show");     = |        ace         |      ventura       |        show        |
 sp.print_c(false, 20, "ace", "ventura", "show");    =         ace               ventura               show
-sp.println_l(true, 20, "ace", "ventura", "show");   = |ace                 |ventura             |show                |
-sp.println_l(false, 20, "ace", "ventura", "show");  = ace                 ventura             show
+
+
 sp.print_l(true, 20, "ace", "ventura", "show");     = |ace                 |ventura             |show                |
 sp.print_l(false, 20, "ace", "ventura", "show");    = ace                 ventura             show
-sp.println_r(true, 20, "ace", "ventura", "show");   = |                 ace|             ventura|                show|
-sp.println_r(false, 20, "ace", "ventura", "show");  =                  ace             ventura                show
+
+
 sp.print_r(true, 20, "ace", "ventura", "show");     = |                 ace|             ventura|                show|
 sp.print_r(false, 20, "ace", "ventura", "show");    =                  ace             ventura                show
 
