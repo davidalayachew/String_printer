@@ -1,12 +1,20 @@
 package io.github.dalayach.Print_tools;
 
-//TODO -- right now, result is working alongside the print/format statements. INSTEAD, have result be the only value calculated, then both return and print result (maybe give the option to print result?)
-//TODO -- give option to choose border character(s) (ideally, allow there to be a left and right variant, as well as a flip variant)
+//TODO   give option to choose border character(s) (ideally, allow there to be a left and right variant, as well as a flip variant)
+//TODO   CHECK LENGTH = it's not exactly clean if somewhere down the line, a String has to go out of bounds to fit
+//TODO   This class is too cluttered - maybe group some of the methods in other classes? How to group?
+//          Maybe helpers in one class? Main printer functions in another? Aliases in a third? Perhaps divide by justification?
 
 public class String_printer
 {
 
    public String_printer()
+   {}
+   
+   public void check_if_at_least_one_of_the_strings_is_too_big()
+   {}
+   
+   public void do_this_if_at_least_one_of_the_strings_is_too_big()
    {}
    
    public String format_specifiers(int left_buffer, int right_buffer)
@@ -272,7 +280,7 @@ public class String_printer
       sp.println_r(true, 20, "ace", "ventura", "show");  System.out.print("  sp.println_r(false, 20, \"ace\", \"ventura\", \"show\");  = ");
       sp.println_r(false, 20, "ace", "ventura", "show"); System.out.print("  sp.print_r(true, 20, \"ace\", \"ventura\", \"show\");     = ");
       sp.print_r(true, 20, "ace", "ventura", "show");  System.out.print("\n  sp.print_r(false, 20, \"ace\", \"ventura\", \"show\");    = ");
-      sp.print_r(false, 20, "ace", "ventura", "show");
+      sp.print_r(false, 20, "ace", "ventura", "show"); System.out.println("\n");
    
    }
 
