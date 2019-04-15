@@ -2,7 +2,7 @@
 
 #### A simple tool that will help with simplifying the output of code.
 
-#### Allows you to organize output into a left/right/center justiifed output, separated with borders (soon to be with your choice of border character), and prints out in a clean and neat format.
+**Allows you to organize output into a left/right/center justiifed output, separated with borders (soon to be with your choice of border character), and prints out in a clean and neat format.**
 
 #### Use case below. You can also run the String_printer to see the same thing!
 
@@ -40,7 +40,7 @@ sp.print_r(false, 20, "ace", "ventura", "show");   =                  ace       
 
 ```
 
-#### --Built to assist output of WOT_PlayerComp_V1
+**--Built to assist output of** `WOT_PlayerComp_V1`
 
 ###### *Honestly, I'm building this software for simplicity's sake and to learn how to deploy on maven... :P*
 
