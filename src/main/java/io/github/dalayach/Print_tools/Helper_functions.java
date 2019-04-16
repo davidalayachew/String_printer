@@ -24,7 +24,6 @@ class Helper_functions
          
          }
       
-         i++;
       
       }
       
@@ -56,7 +55,20 @@ class Helper_functions
    public String specifiers_for_format(int left_buffer, int right_buffer)
    {
    
-      return "%" + left_buffer + "s%" + right_buffer + "s";   //centered, but section size may vary amongst each other
+      if(left_buffer < 1 && right_buffer < 1)
+      {
+      
+         System.out.println("\n\nHMM\n\n");
+         return "%" + (left_buffer + right_buffer) + "s";
+      
+      }
+      
+      else
+      {
+      
+         return "%" + left_buffer + "s%" + right_buffer + "s";   //centered, but section size may vary amongst each other
+      
+      }
    
    }
    
@@ -79,11 +91,11 @@ class Helper_functions
    
       int expected_size = left_buffer + right_buffer;
    
-      if(left_buffer == 0)
+      if(left_buffer == 0 && right_buffer != 0)
       {
          return String.format(specifiers_for_format(expected_size, true), message);}
       
-      else if(right_buffer == 0)
+      else if(right_buffer == 0 && left_buffer != 0)
       {
          return String.format(specifiers_for_format(expected_size, false), message);}
       

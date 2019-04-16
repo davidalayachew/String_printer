@@ -15,7 +15,7 @@ class Build_strings extends Helper_functions
       {
       
          right_buffer   = get_buffer_size(actual_size, message.length());
-         left_buffer    = expected_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
+         left_buffer    = actual_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
       
          result = result + "|" + create_formatted_string(left_buffer, right_buffer, message);
       
@@ -42,7 +42,7 @@ class Build_strings extends Helper_functions
       {
       
          right_buffer   = get_buffer_size(actual_size, message.length());
-         left_buffer   = expected_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
+         left_buffer   = actual_size - right_buffer;//remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to leave the code right-justified, which will mean the left will be buffered on its own, and we will artificially buffer the right side, resulting in a center-justified format
       
          result = result + give_borders(borders) + create_formatted_string(left_buffer, right_buffer, message);
       
