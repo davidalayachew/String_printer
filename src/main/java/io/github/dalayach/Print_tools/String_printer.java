@@ -1,12 +1,10 @@
 package io.github.dalayach.Print_tools;
 
 //TODO   Give option to choose border character(s) (ideally, allow there to be a left and right variant, as well as a flip variant)
-//TODO   This class is too cluttered - maybe group some of the methods in other classes? How to group? Maybe helpers in one class?
-//          Main printer functions in another? Aliases in a third? Perhaps divide by justification?
-//
-//TODO   Optimization on some of the for each loops
+   //TODO   Optimization on some of the for each loops
 //TODO   Maybe make variables like expected_size and borders be instance variables? And build a constructor() and a nextLine() using
 //          those new class variables?
+//TODO   Need WAAAAY more tests
 
 public class String_printer extends Build_strings
 {
