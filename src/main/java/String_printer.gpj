@@ -13,13 +13,17 @@ s#k0C:\\Users\\David\\.m2\\repository\\junit\\junit\\4.12\\junit-4.12.jar\000
 s#j0C:\\Users\\David\\.m2\\repository\\junit\\junit\\4.12\\junit-4.12.jar
 s#l0
 !339;d
-[\012  grasp [\012   legendy 0.0\012   legendx 0.0\012   version 1\012   winflags 3\012   eheight 972\012   ewidth 960\012   height 972\012   width 960\012   wbp 0\012   initlayout 0\012   yoffs 2.0\012   xoffs -2.0\012   scale 1.0\012   args ""\012   otherflags 139\012   shallowjar 1\012   visflags 118423807\012  ]\012  directed 1\012 ]!156;g
+[\012  grasp [\012   legendy 0.0\012   legendx 0.0\012   version 1\012   winflags 3\012   eheight 972\012   ewidth 960\012   height 972\012   width 960\012   wbp 0\012   initlayout 0\012   yoffs 2.0\012   xoffs -2.0\012   scale 1.0\012   args ""\012   otherflags 139\012   shallowjar 1\012   visflags 118423807\012  ]\012  directed 1\012 ]!261;g
+%\011io%sgithub%sdalayach%sPrint_tools%sTUTORIAL_RUN_ME.java
+%\011io%sgithub%sdalayach%sPrint_tools%sBuild_strings.java
 %\011%u%u%upom.xml
 %\011io%sgithub%sdalayach%sPrint_tools%sString_printer.java
-%\011io%sgithub%sdalayach%sPrint_tools%sString_printer_HELPER_FUNCTIONS.java
-!156;f
+%\011io%sgithub%sdalayach%sPrint_tools%sHelper_functions.java
+!261;f
+%\011io%sgithub%sdalayach%sPrint_tools%sTUTORIAL_RUN_ME.java
+%\011io%sgithub%sdalayach%sPrint_tools%sBuild_strings.java
 %\011%u%u%upom.xml
 %\011io%sgithub%sdalayach%sPrint_tools%sString_printer.java
-%\011io%sgithub%sdalayach%sPrint_tools%sString_printer_HELPER_FUNCTIONS.java
+%\011io%sgithub%sdalayach%sPrint_tools%sHelper_functions.java
 !85;l
 %\011%u%utest%sjava%sio%sgithub%sdalayach%sPrint_tools%sTest_for_String_printer.java

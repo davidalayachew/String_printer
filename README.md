@@ -30,13 +30,29 @@ sp.print_r(true, 20, "ace", "ventura", "show");     = |                 ace|    
 sp.print_r(false, 20, "ace", "ventura", "show");    =                  ace             ventura                show
 
 
+
 //Arrays work too!
 
 String arr[] = {"ace", "ventura", "show"};
 
-sp.print_r(false, 20, arr);                        =                  ace             ventura                show
+sp.print_r(false, 20, arr);                         =                  ace             ventura                show
 
-sp.print_r(false, 20, "ace", "ventura", "show");   =                  ace             ventura                show
+sp.print_r(false, 20, "ace", "ventura", "show");    =                  ace             ventura                show
+
+
+
+/* You can control the size of each column too! */
+
+sp.print_r(true, 20, arr);                          = |                 ace|             ventura|                show|
+sp.print_r(true, 10, arr);                          = |       ace|   ventura|      show|
+
+
+
+/* Overloaded version of the function WITHOUT the border check. Basically, it gives borders without asking you. */
+
+sp.print_r(true, 20, "ace", "ventura", "show");     = |                 ace|             ventura|                show|
+sp.print_r(true, 20, arr);                          = |                 ace|             ventura|                show|
+sp.print_r(20, arr);                                = |                 ace|             ventura|                show|
 
 ```
 

@@ -1,6 +1,6 @@
 package io.github.dalayach.Print_tools;
 
-class String_printer_HELPER_FUNCTIONS
+class Helper_functions
 {
 
    public int check_expected_size_is_accurate(int expected_size, String... messages)
@@ -128,50 +128,5 @@ class String_printer_HELPER_FUNCTIONS
    public String create_formatted_string(int left_buffer, int right_buffer, String message)
    {
       return create_formatted_String(left_buffer, right_buffer, message);}
-
-   public static void how_to_use_String_printer()
-   {
-   
-      System.out.print("  String_printer sp = new String_printer();\n\n");
-      String_printer sp = new String_printer();          System.out.print("  sp.println_c(true, 20, \"ace\", \"ventura\", \"show\");   = ");
-      sp.println_c(true, 20, "ace", "ventura", "show");  System.out.print("  sp.println_c(false, 20, \"ace\", \"ventura\", \"show\");  = ");
-      sp.println_c(false, 20, "ace", "ventura", "show"); System.out.print("  sp.print_c(true, 20, \"ace\", \"ventura\", \"show\");     = ");
-      sp.print_c(true, 20, "ace", "ventura", "show");  System.out.print("\n  sp.print_c(false, 20, \"ace\", \"ventura\", \"show\");    = ");
-      sp.print_c(false, 20, "ace", "ventura", "show"); System.out.print("\n  sp.println_l(true, 20, \"ace\", \"ventura\", \"show\");   = ");
-      sp.println_l(true, 20, "ace", "ventura", "show");  System.out.print("  sp.println_l(false, 20, \"ace\", \"ventura\", \"show\");  = ");
-      sp.println_l(false, 20, "ace", "ventura", "show"); System.out.print("  sp.print_l(true, 20, \"ace\", \"ventura\", \"show\");     = ");
-      sp.print_l(true, 20, "ace", "ventura", "show");  System.out.print("\n  sp.print_l(false, 20, \"ace\", \"ventura\", \"show\");    = ");
-      sp.print_l(false, 20, "ace", "ventura", "show"); System.out.print("\n  sp.println_r(true, 20, \"ace\", \"ventura\", \"show\");   = ");
-      sp.println_r(true, 20, "ace", "ventura", "show");  System.out.print("  sp.println_r(false, 20, \"ace\", \"ventura\", \"show\");  = ");
-      sp.println_r(false, 20, "ace", "ventura", "show"); System.out.print("  sp.print_r(true, 20, \"ace\", \"ventura\", \"show\");     = ");
-      sp.print_r(true, 20, "ace", "ventura", "show");  System.out.print("\n  sp.print_r(false, 20, \"ace\", \"ventura\", \"show\");    = ");
-      sp.print_r(false, 20, "ace", "ventura", "show"); System.out.println("\n\n\n");
-      
-      System.out.println("/* Arrays work too! */\n\nString arr[] = {\"ace\", \"ventura\", \"show\"};");
-      String[] arr = {"ace", "ventura", "show"};
-   
-   
-      System.out.print("\nsp.print_r(true, 20, arr);                        = ");
-      sp.print_r(true, 20, arr);
-      
-      System.out.println();
-      
-      System.out.print("sp.print_r(true, 20, \"ace\", \"ventura\", \"show\");   = ");
-      sp.print_r(true, 20, "ace", "ventura", "show");
-      
-      
-      System.out.println("\n\n\n/* Overloaded version of the function WITHOUT the border check. Basically, it gives"
-         + " borders without asking you. */");
-         
-         
-      System.out.print("\nsp.print_r(true, 20, \"ace\", \"ventura\", \"show\");   = ");
-      sp.print_r(true, 20, "ace", "ventura", "show");
-      System.out.print("\nsp.print_r(true, 20, arr);                        = ");
-      sp.print_r(true, 20, arr);
-      System.out.print("\nsp.print_r(20, arr);                              = ");
-      sp.print_r(20, arr);
-      
-      
-   }
    
 }
