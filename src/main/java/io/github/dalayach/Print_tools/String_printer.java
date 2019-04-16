@@ -201,38 +201,11 @@ public class String_printer extends String_printer_HELPER_FUNCTIONS
    public String println_r(boolean borders, int total, String... messages)
    { String result =  print_right_justified(borders, total, messages);  System.out.println();  
       return result + "\n";}
-      
-   public String create_formatted_string(int left_buffer, int right_buffer, String message)
-   {
-      return create_formatted_String(left_buffer, right_buffer, message);}
 
    public static void main(String[] args)
    {
    
-      System.out.print("  String_printer sp = new String_printer();\n\n");
-      String_printer sp = new String_printer();          System.out.print("  sp.println_c(true, 20, \"ace\", \"ventura\", \"show\");   = ");
-      sp.println_c(true, 20, "ace", "ventura", "show");  System.out.print("  sp.println_c(false, 20, \"ace\", \"ventura\", \"show\");  = ");
-      sp.println_c(false, 20, "ace", "ventura", "show"); System.out.print("  sp.print_c(true, 20, \"ace\", \"ventura\", \"show\");     = ");
-      sp.print_c(true, 20, "ace", "ventura", "show");  System.out.print("\n  sp.print_c(false, 20, \"ace\", \"ventura\", \"show\");    = ");
-      sp.print_c(false, 20, "ace", "ventura", "show"); System.out.print("\n  sp.println_l(true, 20, \"ace\", \"ventura\", \"show\");   = ");
-      sp.println_l(true, 20, "ace", "ventura", "show");  System.out.print("  sp.println_l(false, 20, \"ace\", \"ventura\", \"show\");  = ");
-      sp.println_l(false, 20, "ace", "ventura", "show"); System.out.print("  sp.print_l(true, 20, \"ace\", \"ventura\", \"show\");     = ");
-      sp.print_l(true, 20, "ace", "ventura", "show");  System.out.print("\n  sp.print_l(false, 20, \"ace\", \"ventura\", \"show\");    = ");
-      sp.print_l(false, 20, "ace", "ventura", "show"); System.out.print("\n  sp.println_r(true, 20, \"ace\", \"ventura\", \"show\");   = ");
-      sp.println_r(true, 20, "ace", "ventura", "show");  System.out.print("  sp.println_r(false, 20, \"ace\", \"ventura\", \"show\");  = ");
-      sp.println_r(false, 20, "ace", "ventura", "show"); System.out.print("  sp.print_r(true, 20, \"ace\", \"ventura\", \"show\");     = ");
-      sp.print_r(true, 20, "ace", "ventura", "show");  System.out.print("\n  sp.print_r(false, 20, \"ace\", \"ventura\", \"show\");    = ");
-      sp.print_r(false, 20, "ace", "ventura", "show"); System.out.println("\n\n\n");
-      
-      System.out.println("//Arrays work too!\n\nString arr[] = {\"ace\", \"ventura\", \"show\"};");
-      System.out.print("\nsp.print_r(false, 20, arr);                        = ");
-      String[] arr = {"ace", "ventura", "show"};
-      sp.print_r(false, 20, arr);
-      
-      System.out.println("\n");
-      
-      System.out.print("sp.print_r(false, 20, \"ace\", \"ventura\", \"show\");   = ");
-      sp.print_r(false, 20, "ace", "ventura", "show");
+      how_to_use_String_printer();
    
    }
 
