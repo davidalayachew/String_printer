@@ -9,7 +9,7 @@
 
    <name>String_printer</name>
    <!-- FIXME change it to the project's website -->
-   <url>http://www.example.com</url>
+   <url>https://github.com/dalayach/String_printer</url>
 
    <scm>
       <developerConnection>scm:git:https://github.com/dalayach/String_printer</developerConnection>
@@ -29,6 +29,14 @@
          <version>4.11</version>
          <scope>test</scope>
        </dependency>
+	   
+<!-- https://mvnrepository.com/artifact/com.google.code.findbugs/findbugs -->
+<dependency>
+    <groupId>com.google.code.findbugs</groupId>
+    <artifactId>findbugs</artifactId>
+    <version>3.0.1</version>
+</dependency>
+	   
     </dependencies>
 
    <build>
@@ -135,7 +143,29 @@
                   <doUpdate>true</doUpdate>
                   <revisionOnScmFailure>unknownbuild</revisionOnScmFailure>   
                </configuration>
-            </plugin>    
+            </plugin>  
+
+ <plugin>
+   <groupId>org.apache.maven.plugins</groupId>
+   <artifactId>maven-checkstyle-plugin</artifactId>
+   <version>3.0.0</version>
+   <executions>
+     <execution>
+       <id>validate</id>
+       <phase>validate</phase>
+       <configuration>
+         <configLocation>checkstyle.xml</configLocation>
+         <encoding>UTF-8</encoding>
+         <consoleOutput>true</consoleOutput>
+         <failsOnError>true</failsOnError>
+         <linkXRef>false</linkXRef>
+       </configuration>
+       <goals>
+         <goal>check</goal>
+       </goals>
+     </execution>
+   </executions>
+ </plugin>  
           
           </plugins>
        </pluginManagement>

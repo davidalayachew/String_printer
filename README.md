@@ -54,6 +54,16 @@ sp.print_r(true, 20, "ace", "ventura", "show");     = |                 ace|    
 sp.print_r(true, 20, arr);                          = |                 ace|             ventura|                show|
 sp.print_r(20, arr);                                = |                 ace|             ventura|                show|
 
+/* All of the above methods are the short hand aliases. Of course, if you would like to use the longer names, that is fine too! */
+
+
+sp.println_c(20, arr);                                = |        ace         |      ventura       |        show        |
+sp.print_center_justified(20, arr);                   = |        ace         |      ventura       |        show        |
+/**
+ * PLEASE BE AWARE -- the longer versions (currently) don't allow for 'ln' functionality, so
+ * if you would like that, either add it in yourself, or stick to the short hand functions.
+ */
+
 ```
 
 **--Built to assist output of** `WOT_PlayerComp_V1`
