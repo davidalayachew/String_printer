@@ -39,6 +39,15 @@ sp.print_r(false, 20, arr);                         =                  ace      
 
 sp.print_r(false, 20, "ace", "ventura", "show");    =                  ace             ventura                show
 
+/* If the size parameter is too small, all columns (FOR THAT ROW ONLY) will automatically extend to the size of the WIDEST COLUMN */
+
+sp.println_c(true, 20, arr);                          = |        ace         |      ventura       |        show        |
+sp.println_c(true, 10, arr);                          = |   ace    | ventura  |   show   |
+sp.println_c(true, 5, arr);                           = |  ace  |ventura| show  |
+sp.println_c(true, 3, arr);                           = |  ace  |ventura| show  |
+sp.println_c(true, 1, arr);                           = |  ace  |ventura| show  |
+sp.println_c(true, 0, arr);                           = |  ace  |ventura| show  |
+sp.println_c(true, -1, arr);                          = |  ace  |ventura| show  |
 
 
 /* You can control the size of each column too! */
