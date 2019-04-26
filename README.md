@@ -18,26 +18,38 @@
 
 String_printer sp = new String_printer();
 
-sp.print_c(true, 20, "ace", "ventura", "show");     = |        ace         |      ventura       |        show        |
-sp.print_c(false, 20, "ace", "ventura", "show");    =         ace               ventura               show
+//Left justified
+sp.print_l(true, 20, "ace", "ventura", "show");       = |ace                 |ventura             |show                |
+sp.print_l(false, 20, "ace", "ventura", "show");      = ace                 ventura             show                
+
+//Right justified
+sp.print_r(true, 20, "ace", "ventura", "show");       = |                 ace|             ventura|                show|
+sp.print_r(false, 20, "ace", "ventura", "show");      =                  ace             ventura                show
+
+//Center justified
+sp.print_c(true, 20, "ace", "ventura", "show");       = |        ace         |      ventura       |        show        |
+sp.print_c(false, 20, "ace", "ventura", "show");      =         ace               ventura               show        
 
 
-sp.print_l(true, 20, "ace", "ventura", "show");     = |ace                 |ventura             |show                |
-sp.print_l(false, 20, "ace", "ventura", "show");    = ace                 ventura             show
 
-
-sp.print_r(true, 20, "ace", "ventura", "show");     = |                 ace|             ventura|                show|
-sp.print_r(false, 20, "ace", "ventura", "show");    =                  ace             ventura                show
+/* For easy printing in for loops, use the "println_" version instead of "print_" */
+/* Future examples will use the ln version. */
 
 
 
-//Arrays work too!
+/* Arrays work too! */
 
 String arr[] = {"ace", "ventura", "show"};
 
-sp.print_r(false, 20, arr);                         =                  ace             ventura                show
+sp.println_c(true, 20, "ace", "ventura", "show");     = |        ace         |      ventura       |        show        |
+sp.println_c(true, 20, arr);                          = |        ace         |      ventura       |        show        |
 
-sp.print_r(false, 20, "ace", "ventura", "show");    =                  ace             ventura                show
+
+
+/* You can control the size of each column too! */
+
+sp.println_c(true, 20, arr);                          = |        ace         |      ventura       |        show        |
+sp.println_c(true, 10, arr);                          = |   ace    | ventura  |   show   |
 
 /* If the size parameter is too small, all columns (FOR THAT ROW ONLY) will automatically extend to the size of the WIDEST COLUMN */
 
@@ -50,18 +62,13 @@ sp.println_c(true, 0, arr);                           = |  ace  |ventura| show  
 sp.println_c(true, -1, arr);                          = |  ace  |ventura| show  |
 
 
-/* You can control the size of each column too! */
-
-sp.print_r(true, 20, arr);                          = |                 ace|             ventura|                show|
-sp.print_r(true, 10, arr);                          = |       ace|   ventura|      show|
-
-
 
 /* Overloaded version of the function WITHOUT the border check. Basically, it gives borders without asking you. */
 
-sp.print_r(true, 20, "ace", "ventura", "show");     = |                 ace|             ventura|                show|
-sp.print_r(true, 20, arr);                          = |                 ace|             ventura|                show|
-sp.print_r(20, arr);                                = |                 ace|             ventura|                show|
+sp.println_c(true, 20, "ace", "ventura", "show");     = |        ace         |      ventura       |        show        |
+sp.println_c(true, 20, arr);                          = |        ace         |      ventura       |        show        |
+sp.println_c(20, arr);                                = |        ace         |      ventura       |        show        |
+
 
 /* All of the above methods are the short hand aliases. Of course, if you would like to use the longer names, that is fine too! */
 
