@@ -97,7 +97,7 @@ public class TUTORIAL_RUN_ME extends String_printer
       
    }
    
-   /** Main method to run the tutorial. */
+   /** @param  args  means nothing, just here because of javadoc requirements */
    public static void main(String[] args)
    {
    

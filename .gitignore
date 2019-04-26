@@ -3,5 +3,6 @@
 /target/surefire-reports
 *.gpj
 *.html
+/target/site
 /src/main/java
 !/src/main/java/io/github/dalayach/Print_tools/
