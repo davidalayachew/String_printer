@@ -1,4 +1,5 @@
 package io.github.dalayach.Print_tools;
+
 /**
  * Provides helper functions for the other classes to extend/use. Largely focuses on calculating the
  * correct values for the Build_strings class to use when building strings.

@@ -2,6 +2,9 @@ package io.github.dalayach.Print_tools;
 
    /** Builds Strings using precalculated values and String.format(). Will also print output to console. */
 
+   //TODO   - what if the arr is full of empty strings?
+   //TODO   - 
+
 class Build_strings extends Helper_functions
 {
 
