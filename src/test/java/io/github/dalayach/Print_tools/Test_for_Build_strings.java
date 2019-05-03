@@ -23,6 +23,8 @@ public class Test_for_Build_strings
     * A test for the method print_center_justified(boolean borders, int expected_size, String... messages).
     * Will focus primarily on testing the boolean functionality, checking the robustness of expected_size, and testing
     * the array
+    *
+    * STATUS -- INCOMPLETE
     */   
    @Test public void test_print_center_justified()
    {

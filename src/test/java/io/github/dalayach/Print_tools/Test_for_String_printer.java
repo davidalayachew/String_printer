@@ -8,8 +8,9 @@ import org.junit.Test;
  * Tests String_printer functions for their ability to provide correctly
  * formatted strings, account for new lines accurately, and to ensure that the
  * shortened version of each print function works as expected.
-    *
-    */
+ *
+ * STATUS -- COMPLETE
+ */
 public class Test_for_String_printer 
 {
 
