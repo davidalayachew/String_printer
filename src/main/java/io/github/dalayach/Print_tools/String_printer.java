@@ -1,13 +1,5 @@
 package io.github.dalayach.Print_tools;
 
-//TODO   Give option to choose border character(s) (ideally, allow there to be
-//          a left and right variant, as well as a flip variant)
-//TODO   Optimization on some of the for each loops
-//TODO   Maybe make variables like expected_size and borders be instance
-//          variables? And build a constructor() and a nextLine() using those
-//          new class variables?
-//TODO   Build/Complete JavaDoc for all
-
 /**
  * This is the String_printer itself. This is the class to call if you wish to use the functions, and it will have all
  * the functionality of Build_strings, but with some aliases included to keep code compact.
