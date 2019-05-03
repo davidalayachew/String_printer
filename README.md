@@ -33,7 +33,7 @@ sp.print_c(false, 20, "ace", "ventura", "show");      =         ace             
 
 
 /* For easy printing in for loops, use the "println_" version instead of "print_" */
-/* Future examples will use the ln version. */
+/* All of the following examples will use the ln version. */
 
 
 
