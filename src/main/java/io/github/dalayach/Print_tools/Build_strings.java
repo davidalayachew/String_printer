@@ -8,6 +8,22 @@ package io.github.dalayach.Print_tools;
 class Build_strings extends Helper_functions
 {
 
+  /** Will hold the result of each output method. */
+   private String result;
+   
+   /**
+    * Simple set method for field this.result.
+    * @param   new_value   holds the new value that this.result will be set to.
+    */
+   public void append_to_result(String new_value)
+   { 
+      this.result = this.result + new_value; 
+   }
+   
+   /** Clears out this.result, replacing the old value with "". */
+   public void clear_result()
+   { this.result = ""; }
+
    /**
     * Will print and return a sequence of Strings that is center-justified. Each will be separated with borders
     * if the boolean parameter <code>borders</code> is true.
@@ -23,7 +39,8 @@ class Build_strings extends Helper_functions
    public String print_center_justified(boolean borders, int expected_size, String... messages)
    {
    
-      String result = "";
+      clear_result();
+      String temp_value = ""; //will hold the unfinished String that will be returned
       int right_buffer;
       int left_buffer;
       int actual_size = get_actual_size(expected_size, messages);
@@ -36,23 +53,26 @@ class Build_strings extends Helper_functions
          left_buffer   = actual_size - right_buffer;
          //remember, we have code to buffer the left side, or the right, but not both. THEREFORE, we have elected to
          //leave the code right-justified, which will mean the left will be buffered on its own, and we will
-         //artificially buffer the right side, resulting in a center-justified format
+         //artificially buffer the right side, this.resulting in a center-justified format
       
-         result = result
+         append_to_result(
+            temp_value
             .concat(give_borders(borders))
             .concat(
                create_formatted_string(
                   left_buffer, 
                   right_buffer, 
-                  message));
+                  message
+               )
+            ));
       
       }
       
-      result = result + give_borders(borders);
+      append_to_result(give_borders(borders));
       
-      System.out.print(result);
+      System.out.print(this.result);
       
-      return result;
+      return this.result;
    
    }
    
@@ -67,42 +87,8 @@ class Build_strings extends Helper_functions
     */
    public String print_center_justified(int expected_size, String... messages)
    {
-   
-      String result = "";
-      int left_buffer;
-      int right_buffer;
-      int actual_size = get_actual_size(expected_size, messages);
-   
-      for (String message : messages)
-      {
       
-         right_buffer   = get_buffer_size(actual_size, message.length());
-         left_buffer    = actual_size - right_buffer; 
-         // remember, we have code to buffer the left side, or the right, but
-         // not both. THEREFORE, we have elected to leave the code
-         // right-justified, which will mean the left will be buffered on its
-         // own, and we will artificially buffer the right side, resulting in
-         // a center-justified format
-      
-         // FindBugs report:
-         // Build_strings.java SBSC: Build_strings.print_center_justified(int,
-         // String[]) concatenates strings using + in a loop (M) 
-      
-         result = result
-            .concat("|")
-            .concat(
-               create_formatted_string(
-                  left_buffer,
-                  right_buffer,
-                  message));
-      
-      }
-      
-      result = result + "|";
-      
-      System.out.print(result);
-      
-      return result;
+      return print_center_justified(true, expected_size, messages);
    
    }
    
@@ -122,22 +108,30 @@ class Build_strings extends Helper_functions
    public String print_left_justified(boolean borders, int expected_size, String... messages)
    {
          
-      String result = "";
+      clear_result();
       int actual_size = get_actual_size(expected_size, messages);
    
          
       for (String message : messages)
       {
       
-         result = result + give_borders(borders) + create_formatted_string(0, actual_size, message);
+         append_to_result(
+            give_borders(borders)
+            .concat(
+               create_formatted_string(
+                  0, 
+                  actual_size, 
+                  message
+               )
+            ));
       
       }
       
-      result = result + give_borders(borders);
+      append_to_result(give_borders(borders));
       
-      System.out.print(result);
+      System.out.print(this.result);
       
-      return result;
+      return this.result;
          
    }
    
@@ -152,22 +146,7 @@ class Build_strings extends Helper_functions
    public String print_left_justified(int expected_size, String... messages)
    {
    
-      String result = "";
-      int actual_size = get_actual_size(expected_size, messages);
-   
-         
-      for (String message : messages)
-      {
-      
-         result = result + "|" + create_formatted_string(0, actual_size, message);
-      
-      }
-      
-      result = result + "|";
-      
-      System.out.print(result);
-      
-      return result;
+      return print_left_justified(true, expected_size, messages);
    
    }
 
@@ -186,22 +165,29 @@ class Build_strings extends Helper_functions
    public String print_right_justified(boolean borders, int expected_size, String... messages)
    {
          
-      String result = "";
+      clear_result();
       int actual_size = get_actual_size(expected_size, messages);
    
          
       for (String message : messages)
       {
                
-         result = result + give_borders(borders) + create_formatted_string(actual_size, 0, message);
-      
+         append_to_result(
+            give_borders(borders)
+            .concat(
+               create_formatted_string(
+                  actual_size, 
+                  0,
+                  message
+               )
+            ));         
       }
       
-      result = result + give_borders(borders);
+      this.result = this.result + give_borders(borders);
       
-      System.out.print(result);
+      System.out.print(this.result);
       
-      return result;
+      return this.result;
    
    }
    
@@ -216,22 +202,8 @@ class Build_strings extends Helper_functions
    public String print_right_justified(int expected_size, String... messages)
    {
          
-      String result = "";
-      int actual_size = get_actual_size(expected_size, messages);
+      return print_right_justified(true, expected_size, messages);
    
-         
-      for (String message : messages)
-      {
-      
-         result = result + "|" + create_formatted_string(actual_size, 0, message);
-      
-      }
-      
-      result = result + "|";
-      
-      System.out.print(result);
-      
-      return result;
    
    }
 
