@@ -1,10 +1,12 @@
 package io.github.dalayach.Print_tools;
 
-   /** Builds Strings using precalculated values and String.format(). Will also print output to console. */
+/** Builds Strings using precalculated values and String.format(). Will also print output to console. */
 
-   //TODO   - what if the arr is full of empty strings?
-   //TODO   - 
-
+//TODO   - what if the arr is full of empty strings?
+//TODO   Give option to choose border character(s) (ideally, allow there to be
+//          a left and right variant, as well as a flip variant)
+//TODO   Optimization on some of the for each loops
+//TODO   Maybe build a nextLine()?   
 class Build_strings extends Helper_functions
 {
 
